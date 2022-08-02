@@ -7,7 +7,7 @@ else:
 
 def clear():
   if "linux" in sys.platform:
-    os.system("clear")
+    os.systm("clear")
   else:
     os.system("cls")
 clear()
@@ -45,9 +45,21 @@ if opt == "1":
         
       except:
         pass
-    else:
+  else:
+    if "www." in site:
+      global kos
+      kos = site.replace("www.","")
       f = open("dom.txt","r")
+      for kk in f:
+        k = kk.strip()
+        try:
+          fs = socket.gethostbyname(k+kos)
+          print (gn + fs + cv)
+        except:
+          pass
+    else:
       print (yl + "waiting ...")
+      f = open("dom.txt","r")
       for i in f:
         k = i.strip()
         try:
