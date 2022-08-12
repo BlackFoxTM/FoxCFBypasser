@@ -7,7 +7,7 @@ else:
 
 def clear():
   if "linux" in sys.platform:
-    os.systm("clear")
+    os.system("clear")
   else:
     os.system("cls")
 clear()
